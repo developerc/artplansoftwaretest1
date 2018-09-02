@@ -8,14 +8,10 @@ public class Main {
         strReverce.setInputStr(keyboardString);
         strReverce.makeReverce();
         System.out.println("Развернутая строка:" + strReverce.getRevercedStr());
-        strReverce.setCountLoop(1000);
-        strReverce.makeLoop();
-        System.out.println("Продолжительность " + strReverce.getCountLoop() + " циклов = " + strReverce.getDuration() + " нсек");
-        strReverce.setCountLoop(10000);
-        strReverce.makeLoop();
-        System.out.println("Продолжительность " + strReverce.getCountLoop() + " циклов = " + strReverce.getDuration() + " нсек");
-        strReverce.setCountLoop(100000);
-        strReverce.makeLoop();
-        System.out.println("Продолжительность " + strReverce.getCountLoop() + " циклов = " + strReverce.getDuration() + " нсек");
+        for (int cntLoop = 1000; cntLoop <= 100000; cntLoop = cntLoop * 10){
+            strReverce.setCountLoop(cntLoop);
+            strReverce.makeLoop();
+            System.out.println("Продолжительность " + strReverce.getCountLoop() + " циклов = " + strReverce.getDuration() + " нсек");
+        }
     }
 }
